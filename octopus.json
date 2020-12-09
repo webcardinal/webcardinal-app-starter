@@ -1,0 +1,50 @@
+{
+  "workDir": ".",
+  "dependencies": [
+    {
+      "name": "merger",
+      "src": "https://github.com/webcardinal/cardinal-merger",
+      "actions": [
+        {
+          "type": "smartClone",
+          "target": "./dev/cardinal",
+          "collectLog": false
+        },
+        {
+          "type": "execute",
+          "cmd": "cd ./dev/cardinal/merger && npm install"
+        }
+      ]
+    },
+    {
+      "name": "components/core",
+      "src": "https://github.com/webcardinal/cardinal-core",
+      "actions": [
+        {
+          "type": "smartClone",
+          "target": "./dev/cardinal",
+          "collectLog": false
+        },
+        {
+          "type": "execute",
+          "cmd": "cd ./dev/cardinal/components/core && npm install"
+        }
+      ]
+    },
+    {
+      "name": "components/forms",
+      "src": "https://github.com/webcardinal/cardinal-forms",
+      "actions": [
+        {
+          "type": "smartClone",
+          "target": "./dev/cardinal",
+          "collectLog": false
+        },
+        {
+          "type": "execute",
+          "cmd": "cd ./dev/cardinal/components/forms && npm install"
+        }
+      ]
+    }
+  ]
+}

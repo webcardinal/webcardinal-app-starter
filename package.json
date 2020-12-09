@@ -1,0 +1,19 @@
+{
+  "name": "cardinal-app-starter",
+  "version": "1.0.0",
+  "description": "Application template that combines multiple components of Cardinal.",
+  "bin": {
+    "cardinal": "./dev/cardinal/merger/bin/cli.js"
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/octopus/scripts/run && cardinal build"
+  },
+  "devDependencies": {
+    "octopus": "git+http://github.com/privatesky/octopus.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webcardinal/cardinal-app-starter.git"
+  },
+  "license": "MIT"
+}
