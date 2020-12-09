@@ -6,14 +6,17 @@
     "cardinal": "./dev/cardinal/merger/bin/cli.js"
   },
   "scripts": {
-    "postinstall": "node ./node_modules/octopus/scripts/run && cardinal build"
+    "postinstall": "node ./node_modules/octopus/scripts/run && cardinal build",
+    "start": "ws --spa ./index.html"
   },
   "devDependencies": {
+    "local-web-server": "^4.2.1",
     "octopus": "git+http://github.com/privatesky/octopus.git"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/webcardinal/cardinal-app-starter.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {}
 }
