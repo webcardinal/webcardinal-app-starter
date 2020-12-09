@@ -9,6 +9,7 @@
     "postinstall": "node ./node_modules/octopus/scripts/run && cardinal build",
     "start": "ws --spa ./index.html"
   },
+  "dependencies": {},
   "devDependencies": {
     "local-web-server": "^4.2.1",
     "octopus": "git+http://github.com/privatesky/octopus.git"
@@ -17,6 +18,5 @@
     "type": "git",
     "url": "git+https://github.com/webcardinal/cardinal-app-starter.git"
   },
-  "license": "MIT",
-  "dependencies": {}
+  "license": "MIT"
 }
