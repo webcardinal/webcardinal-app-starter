@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "Application template that combines multiple components of Cardinal.",
   "scripts": {
-    "postinstall": "node ./node_modules/octopus/scripts/run && cardinal build",
-    "start": "ws --spa ./index.html"
+    "postinstall": "node ./node_modules/octopus/scripts/run && npm run build-cardinal",
+    "build-cardinal": "npm run build-cardinal-components && npm run build-cardinal-themes",
+    "build-cardinal-themes": "node ./node_modules/octopus/scripts/run build-cardinal-themes",
+    "build-cardinal-components": "node ./node_modules/octopus/scripts/run build-cardinal-components",
+    "server": "ws --spa ./index.html"
   },
+  "dependencies": {},
   "devDependencies": {
-    "@cardinal/composer": "git+https://github.com/webcardinal/cardinal-composer.git",
     "local-web-server": "^4.2.1",
-    "octopus": "git+http://github.com/privatesky/octopus.git"
+    "octopus": "git+https://github.com/webcardinal/octopus"
   },
   "repository": {
     "type": "git",

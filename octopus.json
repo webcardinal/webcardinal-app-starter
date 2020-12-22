@@ -30,6 +30,45 @@
           "cmd": "cd ./dev/cardinal/components/forms && npm install"
         }
       ]
+    },
+    {
+      "name": "components/barcode",
+      "src": "https://github.com/webcardinal/cardinal-barcode",
+      "actions": [
+        {
+          "type": "smartClone",
+          "target": "./dev/cardinal",
+          "collectLog": false
+        },
+        {
+          "type": "execute",
+          "cmd": "cd ./dev/cardinal/components/barcode && npm install"
+        }
+      ]
+    }
+  ],
+  "build-cardinal-components": [
+    {
+      "name": "build-cardinal-components",
+      "src": "./dev/cardinal/components",
+      "actions": [
+        {
+          "type": "buildCardinalComponents",
+          "target": "./cardinal/components"
+        }
+      ]
+    }
+  ],
+  "build-cardinal-themes": [
+    {
+      "name": "build-cardinal-themes",
+      "src": "./dev/cardinal/themes",
+      "actions": [
+        {
+          "type": "buildCardinalThemes",
+          "target": "./themes"
+        }
+      ]
     }
   ]
 }

@@ -26,17 +26,13 @@ Second one is where your development workflow will take place.
 ### How to build
 
 ```
-# Production build
-cardinal build 
-
-# Development build
-cardinal build --dev
+npm run build-cardinal
 ```
 
 ### Run local server
 
 ```
-npm run start
+npm run server
 ```
 
 ### See it in your browser
