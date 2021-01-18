@@ -1,0 +1,20 @@
+{
+  "pagesPathname": "pages",
+  "pagesFallback": {
+    "name": "Home"
+  },
+  "pages": [
+    {
+      "path": "/",
+      "name": "Homepage",
+      "src": "home.html"
+    },
+    {
+      "name": "About"
+    },
+    {
+      "name": "Contact"
+    }
+  ],
+  "theme": "clear-sky-theme"
+}

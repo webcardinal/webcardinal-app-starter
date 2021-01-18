@@ -1,22 +1,23 @@
 {
-  "name": "cardinal-app-starter",
+  "name": "webcardinal-app-starter",
   "version": "1.0.0",
-  "description": "Application template that combines multiple components of Cardinal.",
+  "description": "Application template that combines multiple components of WebCardinal.",
   "scripts": {
-    "postinstall": "node ./node_modules/octopus/scripts/run && npm run build-cardinal",
-    "build-cardinal": "npm run build-cardinal-components && npm run build-cardinal-themes",
-    "build-cardinal-themes": "node ./node_modules/octopus/scripts/run build-cardinal-themes",
-    "build-cardinal-components": "node ./node_modules/octopus/scripts/run build-cardinal-components",
-    "server": "ws --spa ./index.html"
+    "postinstall": "node ./node_modules/octopus/scripts/run && npm run clone-webcardinal-components && npm run build",
+    "clone-webcardinal-components": "node ./node_modules/octopus/scripts/run clone-webcardinal-components",
+    "build-webcardinal-components": "node ./node_modules/octopus/scripts/run build-webcardinal-components",
+    "build-webcardinal-themes": "node ./node_modules/octopus/scripts/run build-webcardinal-themes",
+    "build": "npm run build-webcardinal-components && npm run build-webcardinal-themes",
+    "start": "ws --spa ./index.html"
   },
   "dependencies": {},
   "devDependencies": {
     "local-web-server": "^4.2.1",
-    "octopus": "git+https://github.com/webcardinal/octopus"
+    "octopus": "https://github.com/webcardinal/octopus"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/webcardinal/cardinal-app-starter.git"
+    "url": "git+https://github.com/webcardinal/webcardinal-app-starter.git"
   },
   "license": "MIT"
 }
