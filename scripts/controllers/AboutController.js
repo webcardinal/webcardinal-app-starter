@@ -1,17 +1,27 @@
-import CardinalController from "/webcardinal/base/controllers/ContainerController.js";
+const { Controller } = WebCardinal.controllers;
 
-class AboutController extends CardinalController {
-    getModel = _ => ({ number: 0 })
+class AboutController extends Controller {
+    getModel = _ => ({ 
+        input: {
+            label: 'Seconds',
+            type: 'text',
+            value: '0'
+        }
+     })
 
-    constructor(element, history) {
-        super(element, history);
+    constructor(element) {
+        super(element);
 
         console.log('Hello World!');
 
-        this.model = this.setModel(this.getModel());
+        this.setModel(this.getModel());
 
+        console.log(this.model);
+    }
+
+    async onReady() {
         setInterval(_ => {
-            this.model.number++;
+            this.model.input.value++;
         }, 1000);
     }
 }
