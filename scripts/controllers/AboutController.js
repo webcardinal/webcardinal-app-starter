@@ -5,7 +5,8 @@ class AboutController extends Controller {
         input: {
             label: 'Seconds',
             type: 'text',
-            value: '0'
+            value: '0',
+            style: 'border: 1px solid #333'
         }
      })
 
@@ -16,7 +17,10 @@ class AboutController extends Controller {
 
         this.setModel(this.getModel());
 
-        console.log(this.model);
+        console.log({
+            proxy: this.model,
+            model: JSON.stringify(this.model)
+        });
     }
 
     async onReady() {
@@ -26,4 +30,4 @@ class AboutController extends Controller {
     }
 }
 
-export default AboutController; // used by <wcc-controller> and other components
+export default AboutController; // used by <wcc-controller>, <wcc-bindable> and other components

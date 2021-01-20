@@ -1,6 +1,8 @@
 <wcc-bindable controller="AboutController">
-    <h1>About page!</h1>
-    <section>
-        <psk-input model="input"></psk-input>
-    </section>
+    <h1>About</h1>
+    <psk-layout columns="3">
+        <input model="@input">
+        <input value="@input.value" type="@input.type">
+        <psk-input model="@input"></psk-input>
+    </psk-layout>
 </wcc-bindable>
