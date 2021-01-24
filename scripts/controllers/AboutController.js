@@ -1,32 +1,47 @@
 const { Controller } = WebCardinal.controllers;
 
 class AboutController extends Controller {
-    getModel = _ => ({ 
+    getModel = (_) => ({
         input: {
-            label: 'Seconds',
-            type: 'text',
-            value: '0',
-            style: 'border: 1px solid #333'
-        }
-     })
+            label: "Seconds",
+            type: "text",
+            value: "0",
+            style: "border: 1px solid #333",
+        },
+    });
 
     constructor(element) {
         super(element);
 
-        console.log('Hello World!');
+        console.log("Hello World!");
 
         this.setModel(this.getModel());
 
         console.log({
             proxy: this.model,
-            model: JSON.stringify(this.model)
+            model: JSON.stringify(this.model),
         });
     }
 
     async onReady() {
-        setInterval(_ => {
+        setInterval((_) => {
             this.model.input.value++;
         }, 1000);
+
+        this.element.querySelector('button[name="modal"]').addEventListener("click", () => {
+            const modal = Object.assign(document.createElement("wcc-modal"), {
+                modalName: "demo-modal",
+                modalTitle: "test",
+            });
+            this.element.appendChild(modal);
+
+            modal.addEventListener("confirmed", () => {
+                modal.remove();
+            });
+            modal.addEventListener("closed", () => {
+                modal.remove();
+            });            
+        });
     }
 }
 
