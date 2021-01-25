@@ -35,12 +35,23 @@ class AboutController extends Controller {
             });
             this.element.appendChild(modal);
 
+            modal.addEventListener("initialised", (e) => {
+                const modalElement = e.detail;
+                modalElement.querySelector(".btn-confirm").addEventListener("click", () => {
+                    console.log("Custom confirm button pressed");
+                    modal.remove();
+                });
+                modalElement.querySelector(".btn-close").addEventListener("click", () => {
+                    console.log("Custom close button pressed");
+                    modal.remove();
+                });
+            });
             modal.addEventListener("confirmed", () => {
                 modal.remove();
             });
             modal.addEventListener("closed", () => {
                 modal.remove();
-            });            
+            });
         });
     }
 }
