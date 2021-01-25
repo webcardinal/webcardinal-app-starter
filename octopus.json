@@ -54,13 +54,7 @@
       "name": "build-webcardinal-components",
       "actions": [
         {
-          "type": "buildWebCardinalComponents",
-          "options": {
-            "DEV": true,
-            "devComponents": [
-              "webcardinal-core"
-            ]
-          }
+          "type": "buildWebCardinalComponents"
         }
       ]
     }
