@@ -10,8 +10,8 @@ class AboutController extends Controller {
         },
     });
 
-    constructor(element) {
-        super(element);
+    constructor(element, history) {
+        super(element, history);
 
         console.log("Hello World!");
 
@@ -26,32 +26,15 @@ class AboutController extends Controller {
     async onReady() {
         setInterval((_) => {
             this.model.input.value++;
+            // console.warn("test", "test2");
+            // console.log(test);
         }, 1000);
 
         this.element.querySelector('button[name="modal"]').addEventListener("click", () => {
-            const modal = Object.assign(document.createElement("wcc-modal"), {
-                modalName: "demo-modal",
-                modalTitle: "test",
-            });
-            this.element.appendChild(modal);
-
-            modal.addEventListener("initialised", (e) => {
-                const modalElement = e.detail;
-                modalElement.querySelector(".btn-confirm").addEventListener("click", () => {
-                    console.log("Custom confirm button pressed");
-                    modal.remove();
-                });
-                modalElement.querySelector(".btn-close").addEventListener("click", () => {
-                    console.log("Custom close button pressed");
-                    modal.remove();
-                });
-            });
-            modal.addEventListener("confirmed", () => {
-                modal.remove();
-            });
-            modal.addEventListener("closed", () => {
-                modal.remove();
-            });
+            this.showModal("Sample content");            
+        });
+        this.element.querySelector('button[name="modal-redirect"]').addEventListener("click", () => {
+            this.showErrorModalAndRedirect("Error message", "contact", 3000);            
         });
     }
 }
