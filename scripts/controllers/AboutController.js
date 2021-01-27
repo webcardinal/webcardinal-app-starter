@@ -1,6 +1,6 @@
-const { Controller } = WebCardinal.controllers;
+const { WccController } = WebCardinal.controllers;
 
-class AboutController extends Controller {
+class AboutController extends WccController {
     getModel = (_) => ({
         input: {
             label: "Seconds",
@@ -31,10 +31,13 @@ class AboutController extends Controller {
         }, 1000);
 
         this.element.querySelector('button[name="modal"]').addEventListener("click", () => {
-            this.showModal("Sample content");            
+            this.showModal("Sample content");
+        });
+        this.element.querySelector('button[name="modal-error"]').addEventListener("click", () => {
+            this.showErrorModal("Error message", "Error");
         });
         this.element.querySelector('button[name="modal-redirect"]').addEventListener("click", () => {
-            this.showErrorModalAndRedirect("Error message", "contact", 3000);            
+            this.showErrorModalAndRedirect("Error message", "contact", 3000);
         });
     }
 }

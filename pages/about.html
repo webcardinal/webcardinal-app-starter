@@ -1,10 +1,11 @@
 <wcc-bindable controller="AboutController">
     <h1>About</h1>
     <psk-layout columns="3">
-        <input model="@input">
-        <input value="@input.value" type="@input.type">
+        <input model="@input" />
+        <input value="@input.value" type="@input.type" />
         <psk-input model="@input"></psk-input>
     </psk-layout>
     <button name="modal">Show modal</button>
+    <button name="modal-error">Show error modal</button>
     <button name="modal-redirect">Show error modal and redirect</button>
 </wcc-bindable>
