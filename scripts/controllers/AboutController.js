@@ -8,6 +8,9 @@ class AboutController extends WccController {
             value: "0",
             style: "border: 1px solid #333",
         },
+        conditionResult: true,
+        wasSubmitted: false,
+        hasErrors: false
     });
 
     constructor(element, history) {
@@ -26,9 +29,30 @@ class AboutController extends WccController {
     async onReady() {
         setInterval((_) => {
             this.model.input.value++;
+            this.model.conditionResult = !this.model.conditionResult;
             // console.warn("test", "test2");
             // console.log(test);
         }, 1000);
+
+        // testing various conditions update
+        const updateSubmittedInfo = () => {
+            setTimeout(() => {
+                this.model.wasSubmitted = true;
+                
+                setTimeout(() => {
+                    this.model.hasErrors = true;
+                    
+                    setTimeout(() => {
+                        this.model.wasSubmitted = false;
+                        this.model.hasErrors = false;
+
+                        updateSubmittedInfo();
+                    }, 1000)
+                }, 1000);
+            }, 1000);
+        };
+        updateSubmittedInfo();
+
 
         this.element.querySelector('button[name="modal"]').addEventListener("click", () => {
             this.showModal("Sample content");

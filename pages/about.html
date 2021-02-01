@@ -8,4 +8,36 @@
     <button name="modal">Show modal</button>
     <button name="modal-error">Show error modal</button>
     <button name="modal-redirect">Show error modal and redirect</button>
+
+    <!-- <button model="@button"></button> -->
+
+    <wcc-if condition="@conditionResult">
+        <div slot="true" class="alert alert-danger">
+            <p>TRUE</p>
+            <input model="@input" />
+        </div>
+
+        <div slot="false" class="alert alert-success">
+            <p>FALSE</p>
+            <input value="@input.value" type="@input.type" />
+        </div>
+    </wcc-if>
+
+    <wcc-if condition="@wasSubmitted">
+        <div slot="true" class="alert alert-danger">
+            <p>Was submitted:</p>
+            <wcc-if condition="@hasErrors">
+                <div slot="true" class="alert alert-danger">
+                    <p>The email address is invalid</p>
+                </div>
+
+                <div slot="false" class="alert alert-success">
+                    <p>The email address is valid</p>
+                </div>
+            </wcc-if>
+        </div>
+        <div slot="false" class="alert alert-success">
+            <p>Submitting...</p>
+        </div>
+    </wcc-if>
 </wcc-bindable>
