@@ -5,12 +5,41 @@
         <input value="@input.value" type="@input.type" />
         <psk-input model="@input"></psk-input>
     </psk-layout>
-    <button name="modal">Show modal</button>
-    <button name="modal-error">Show error modal</button>
-    <button name="modal-redirect">Show error modal and redirect</button>
+    <button name="modal" data-tag="showModal">Show modal</button>
+    <button name="modal-error" data-tag="showModalError">Show error modal</button>
+    <button name="modal-redirect" data-tag="showModalRedirect">Show error modal and redirect</button>
 
-    <!-- <button model="@button"></button> -->
+    <h1>wcc-for example 1</h1>
+    <wcc-for data-model="@itemsOne">
+        <article></article>
+        <span></span>
+        <button data-tag="sample1"></button>
+    </wcc-for>
 
+    <h1>wcc-for example 2</h1>
+    <wcc-for data-model="@itemsTwo">
+        <article class="article">
+            <h4 data-model="@title" class="article"></h4>
+            <p data-model="@content"></p>
+        </article>
+    </wcc-for>
+    <button data-model="@addItem"></button>
+    <button data-model="@removeItem"></button>
+    <button data-model="@modifyItem"></button>
+    <button data-model="@reverse"></button>
+
+    <button data-model="@button1" data-tag="button1"></button>
+    <button data-model="@button2" data-tag="button2"></button>
+
+    <h1>wcc-for example 3</h1>
+    <wcc-for data-model="@itemsThree">
+        <div data-model="@div" class="div"></div>
+        <wcc-for data-model="@array">
+            <span></span>
+        </wcc-for>
+    </wcc-for>
+
+    <h1>wcc-if example 1</h1>
     <wcc-if condition="@conditionResult">
         <div slot="true" class="alert alert-danger">
             <p>TRUE</p>
@@ -23,6 +52,7 @@
         </div>
     </wcc-if>
 
+    <h1>wcc-if example 2</h1>
     <wcc-if condition="@wasSubmitted">
         <div slot="true" class="alert alert-danger">
             <p>Was submitted:</p>
