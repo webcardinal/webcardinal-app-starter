@@ -1,9 +1,9 @@
 <wcc-bindable controller="AboutController">
     <h1>About</h1>
     <psk-layout columns="3">
-        <input model="@input" />
+        <input data-model="@input" />
         <input value="@input.value" type="@input.type" />
-        <psk-input model="@input"></psk-input>
+        <psk-input data-model="@input"></psk-input>
     </psk-layout>
     <button name="modal" data-tag="showModal">Show modal</button>
     <button name="modal-error" data-tag="showModalError">Show error modal</button>
@@ -28,8 +28,17 @@
     <button data-model="@modifyItem"></button>
     <button data-model="@reverse"></button>
 
+    <br>
+
     <button data-model="@button1" data-tag="button1"></button>
     <button data-model="@button2" data-tag="button2"></button>
+    <button data-model="@button3"></button>
+
+    <button data-model="@redirectToContact"></button>
+    <wcc-link tag="contact">Contact</wcc-link>
+    <wcc-link href="http://127.0.0.1:8000/contact">Contact 2</wcc-link>
+    <wcc-link href="/">home</wcc-link>
+    <wcc-link href="https://stackoverflow.com">StackOverflow</wcc-link>
 
     <h1>wcc-for example 3</h1>
     <wcc-for data-model="@itemsThree">
@@ -43,7 +52,7 @@
     <wcc-if condition="@conditionResult">
         <div slot="true" class="alert alert-danger">
             <p>TRUE</p>
-            <input model="@input" />
+            <input data-model="@input" />
         </div>
 
         <div slot="false" class="alert alert-success">

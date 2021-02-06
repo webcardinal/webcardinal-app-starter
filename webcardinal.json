@@ -13,7 +13,13 @@
       "name": "About"
     },
     {
-      "name": "Contact"
+      "name": "Contact",
+      "tag": "contact"
+    },
+    {
+      "name": "PSK Styles",
+      "tag": "faq",
+      "src": "https://privatesky.xyz/pages/faq.html"
     }
   ],
   "theme": "clear-sky-theme"

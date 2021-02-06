@@ -13,80 +13,89 @@ class AboutController extends WccController {
         hasErrors: false,
         itemsOne: [
             {
-                innerHTML: "Item 0",
+                html: "Item 0",
             },
             {
-                innerHTML: "Item 1",
+                html: "Item 1",
             },
             {
-                innerHTML: "Item 2",
+                html: "Item 2",
             },
             {
-                innerHTML: "Item 3",
+                html: "Item 3",
             },
         ],
         itemsTwo: [
             {
                 title: {
-                    innerText: "Title 1",
+                    text: "Title 1",
                     class: "title--bigger",
                     style: "color: red",
                 },
                 content: {
-                    innerText: "Description 1",
+                    text: "Description 1",
                 },
             },
             {
                 title: {
-                    innerText: "Title 2",
+                    text: "Title 2",
                 },
                 content: {
-                    innerText: "Description 2",
+                    text: "Description 2",
                 },
             },
             {
                 title: {
-                    innerHTML: 'Title 3 <a href="/more">...read more</a>',
+                    html: 'Title 3 <a href="/more">...read more</a>',
                 },
                 content: {
-                    innerText: "Description 3",
+                    text: "Description 3",
                 },
             },
         ],
         itemsThree: [
             {
-                div: { innerText: "A" },
-                array: [{ innerText: "a1" }, { innerText: "a2" }],
+                div: { text: "A" },
+                array: [{ text: "a1" }, { text: "a2" }],
             },
             {
-                div: { innerText: "B" },
-                array: [{ innerText: "b1" }, { innerText: "b2" }, { innerText: "b3" }],
+                div: { text: "B" },
+                array: [{ text: "b1" }, { text: "b2" }, { text: "b3" }],
             },
         ],
         addItem: {
-            innerText: "Add +",
-            element: true,
+            text: "Add +",
+            _saveElement: true,
         },
         removeItem: {
-            innerText: "Remove -",
-            element: true,
+            text: "Remove -",
+            _saveElement: true,
         },
         modifyItem: {
-            innerText: `What's your lucky number?`,
-            element: true,
+            text: `What's your lucky number?`,
+            _saveElement: true
         },
         reverse: {
-            innerText: `Reverse ↻`,
-            element: true,
+            text: `Reverse ↻`,
+            _saveElement: true,
         },
         button1: {
-            innerText: "Button 1",
+            text: "Button 1",
             data: "button1 data",
         },
         button2: {
-            innerText: "Button 1",
+            text: "Button 2",
             data: "button2 data"
         },
+        button3: {
+            text: "Button 3",
+            tag: "button3",
+            data: 'button3 data'
+        },
+        redirectToContact: {
+            text: 'Redirect to contact',
+            tag: 'redirect'
+        }
     });
 
     constructor(element, history) {
@@ -139,7 +148,7 @@ class AboutController extends WccController {
             this.showErrorModalAndRedirect("Error message", "Redirecting to contact", "contact", 3000);
         });
 
-        this.model.addItem.element.addEventListener("click", () => {
+        this.model.addItem.getElement().addEventListener("click", () => {
             let index = this.model.itemsTwo.length + 1;
             this.model.itemsTwo.push({
                 title: { innerText: `Title ${index}` },
@@ -147,17 +156,17 @@ class AboutController extends WccController {
             });
         });
 
-        this.model.removeItem.element.addEventListener("click", () => {
+        this.model.removeItem.getElement().addEventListener("click", () => {
             this.model.itemsTwo.splice(-1, 1);
         });
 
-        this.model.modifyItem.element.addEventListener("click", () => {           
+        this.model.modifyItem.getElement().addEventListener("click", () => {
             this.model.itemsTwo[0] = {
                 innerText: `My lucky number is ${Math.round(Math.random() * 100)}!`
             };
         });
 
-        this.model.reverse.element.addEventListener("click", () => {
+        this.model.reverse.getElement().addEventListener("click", () => {
             this.model.itemsTwo.reverse();
         });
 
@@ -181,10 +190,18 @@ class AboutController extends WccController {
             console.log(`Tag button2 click`, model, event);
             alert(`Tag button2 click with data: ${model.data}`);
         });
+        this.onTagClick('button3', (model, event) => {
+            console.log(`Tag button3 click`, model, event);
+            alert(`Tag button3 click with data: ${model.data}`);
+        });
 
         setTimeout(() => {
             this.offTagClick('sample1', sample1TagSecondListener);
-        }, 2000)
+        }, 2000);
+
+        this.onTagClick('redirect', () => {
+            this.navigateToTag('contact');
+        })
     }
 }
 
