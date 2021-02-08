@@ -151,8 +151,8 @@ class AboutController extends WccController {
         this.model.addItem.getElement().addEventListener("click", () => {
             let index = this.model.itemsTwo.length + 1;
             this.model.itemsTwo.push({
-                title: { innerText: `Title ${index}` },
-                content: { innerText: `Span ${index}` },
+                title: { text: `Title ${index}` },
+                content: { text: `Span ${index}` },
             });
         });
 
@@ -162,7 +162,7 @@ class AboutController extends WccController {
 
         this.model.modifyItem.getElement().addEventListener("click", () => {
             this.model.itemsTwo[0] = {
-                innerText: `My lucky number is ${Math.round(Math.random() * 100)}!`
+                text: `My lucky number is ${Math.round(Math.random() * 100)}!`
             };
         });
 
@@ -170,28 +170,28 @@ class AboutController extends WccController {
             this.model.itemsTwo.reverse();
         });
 
-        const sample1TagSecondListener = (model, event) => {
-            console.log(`2) Tag sample1`, model, event);
+        const sample1TagSecondListener = (model, target, event) => {
+            console.log(`2) Tag sample1`, model, target, event);
         };
 
-        this.onTag('sample1', 'click', (model, event) => {
-            console.log(`1) Tag sample1`, model, event);
+        this.onTag('sample1', 'click', (model, target, event) => {
+            console.log(`1) Tag sample1`, model, target, event);
         });
         this.onTagClick('sample1', sample1TagSecondListener);
-        this.onTagClick('sample1', (model, event) => {
-            console.log(`3) Tag sample1`, model, event);
+        this.onTagClick('sample1', (model, target, event) => {
+            console.log(`3) Tag sample1`, model, target, event);
         });
 
-        this.onTagClick('button1', (model, event) => {
-            console.log(`Tag button1 click`, model, event);
+        this.onTagClick('button1', (model, target, event) => {
+            console.log(`Tag button1 click`, model, target, event);
             alert(`Tag button1 click with data: ${model.data}`);
         });
-        this.onTagClick('button2', (model, event) => {
-            console.log(`Tag button2 click`, model, event);
+        this.onTagClick('button2', (model, target, event) => {
+            console.log(`Tag button2 click`, model, target, event);
             alert(`Tag button2 click with data: ${model.data}`);
         });
-        this.onTagClick('button3', (model, event) => {
-            console.log(`Tag button3 click`, model, event);
+        this.onTagClick('button3', (model, target, event) => {
+            console.log(`Tag button3 click`, model, target, event);
             alert(`Tag button3 click with data: ${model.data}`);
         });
 
