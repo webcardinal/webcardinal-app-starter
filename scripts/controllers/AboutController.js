@@ -140,7 +140,6 @@ class AboutController extends WccController {
         };
         updateSubmittedInfo();
 
-        this.onTagClick('showModal', (model, event) => {
         this.onTagClick('showModal', (model, target, event) => {
             this.showModal("Sample content");
         });
