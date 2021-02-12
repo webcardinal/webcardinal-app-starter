@@ -1,0 +1,15 @@
+<wcc-bindable controller="WebcSkinController">
+    <webc-skin>
+        <header>
+            <h1 data-model="@header.title"></h1>
+        </header>
+
+        <main>
+            <psk-accordion multiple>
+                <wcc-for data-model="@main.items">
+                    <psk-accordion-item data-model="@"></psk-accordion-item>
+                </wcc-for>
+            </psk-accordion>
+        </main>
+    </webc-skin>
+</wcc-bindable>

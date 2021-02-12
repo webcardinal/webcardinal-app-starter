@@ -13,6 +13,14 @@
       "name": "About"
     },
     {
+      "name": "Demos",
+      "children": [
+        {
+          "name": "webc-skin"
+        }
+      ]
+    },
+    {
       "name": "Contact",
       "tag": "contact"
     },

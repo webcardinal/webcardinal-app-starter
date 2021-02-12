@@ -1,3 +1,5 @@
 :root {
     /* Override defaults (css variables of wcc-<component>) */
+
+    --wcc-app-menu-mode: horizontal;
 }

@@ -13,7 +13,9 @@ class AboutController extends WccController {
         hasErrors: false,
         itemsOne: [
             {
-                html: "Item 0",
+                text: "Item 0",
+                // html: `<span>${this.t('ITEM')}</span>`,
+                // this.t("ITEM")
             },
             {
                 html: "Item 1",
@@ -139,12 +141,13 @@ class AboutController extends WccController {
         updateSubmittedInfo();
 
         this.onTagClick('showModal', (model, event) => {
+        this.onTagClick('showModal', (model, target, event) => {
             this.showModal("Sample content");
         });
-        this.onTagClick('showModalError', (model, event) => {
+        this.onTagClick('showModalError', (model, target, event) => {
             this.showErrorModal("Error message", "Error");
         });
-        this.onTagClick('showModalRedirect', (model, event) => {
+        this.onTagClick('showModalRedirect', (model, target, event) => {
             this.showErrorModalAndRedirect("Error message", "Redirecting to contact", "contact", 3000);
         });
 
