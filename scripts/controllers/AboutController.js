@@ -163,9 +163,7 @@ class AboutController extends WccController {
         });
 
         this.model.modifyItem.getElement().addEventListener("click", () => {
-            this.model.itemsTwo[0] = {
-                text: `My lucky number is ${Math.round(Math.random() * 100)}!`
-            };
+            this.model.itemsTwo[0].title.text = `My lucky number is ${Math.round(Math.random() * 100)}!`;
         });
 
         this.model.reverse.getElement().addEventListener("click", () => {

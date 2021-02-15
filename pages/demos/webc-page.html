@@ -1,0 +1,22 @@
+<webc-page controller="WebcPageController">
+    <button data-model="@button1" data-tag="button1"></button>
+    <button data-model="@button2"></button>
+    <button data-model="@button3"></button>
+    <input type="button" value="$button4" />
+
+    <wcc-if condition="@conditionResult">
+        <div slot="true" class="alert alert-danger">
+            <p>TRUE</p>
+            <input type="button" value="$button5" />
+        </div>
+
+        <div slot="false" class="alert alert-success">
+            <p>FALSE</p>
+            <input type="button" value="$button6" />
+        </div>
+    </wcc-if>
+
+    <wcc-for data-model="@itemsOne" auto-bind>
+        <button></button>
+    </wcc-for>
+</webc-page>

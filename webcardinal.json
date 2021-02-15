@@ -17,6 +17,9 @@
       "children": [
         {
           "name": "webc-skin"
+        },
+        {
+          "name": "webc-page"
         }
       ]
     },
