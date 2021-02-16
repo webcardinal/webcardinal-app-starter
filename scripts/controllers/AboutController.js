@@ -75,7 +75,7 @@ class AboutController extends WccController {
         },
         modifyItem: {
             text: `What's your lucky number?`,
-            _saveElement: true
+            _saveElement: true,
         },
         reverse: {
             text: `Reverse ↻`,
@@ -87,17 +87,17 @@ class AboutController extends WccController {
         },
         button2: {
             text: "Button 2",
-            data: "button2 data"
+            data: "button2 data",
         },
         button3: {
             text: "Button 3",
             tag: "button3",
-            data: 'button3 data'
+            data: "button3 data",
         },
         redirectToContact: {
-            text: 'Redirect to contact',
-            tag: 'redirect'
-        }
+            text: "Redirect to contact",
+            tag: "redirect",
+        },
     });
 
     constructor(element, history) {
@@ -125,28 +125,34 @@ class AboutController extends WccController {
         const updateSubmittedInfo = () => {
             setTimeout(() => {
                 this.model.wasSubmitted = true;
-        
+
                 setTimeout(() => {
                     this.model.hasErrors = true;
-        
+
                     setTimeout(() => {
                         this.model.wasSubmitted = false;
                         this.model.hasErrors = false;
-        
+
                         updateSubmittedInfo();
-                    }, 1000)
+                    }, 1000);
                 }, 1000);
             }, 1000);
         };
         updateSubmittedInfo();
 
-        this.onTagClick('showModal', (model, target, event) => {
+        this.onTagClick("showModal", (model, target, event) => {
             this.showModal("Sample content");
         });
-        this.onTagClick('showModalError', (model, target, event) => {
+        this.onTagClick("showModalFromTemplate", (model, target, event) => {
+            this.showModalFromTemplate("demo-modal", (e) => {
+                const input = e.detail.modal.querySelector("input");
+                alert(`You've entered: ${input.value}`);
+            });
+        });
+        this.onTagClick("showModalError", (model, target, event) => {
             this.showErrorModal("Error message", "Error");
         });
-        this.onTagClick('showModalRedirect', (model, target, event) => {
+        this.onTagClick("showModalRedirect", (model, target, event) => {
             this.showErrorModalAndRedirect("Error message", "Redirecting to contact", "contact", 3000);
         });
 
@@ -174,34 +180,34 @@ class AboutController extends WccController {
             console.log(`2) Tag sample1`, model, target, event);
         };
 
-        this.onTagEvent('sample1', 'click', (model, target, event) => {
+        this.onTagEvent("sample1", "click", (model, target, event) => {
             console.log(`1) Tag sample1`, model, target, event);
         });
-        this.onTagClick('sample1', sample1TagSecondListener);
-        this.onTagClick('sample1', (model, target, event) => {
+        this.onTagClick("sample1", sample1TagSecondListener);
+        this.onTagClick("sample1", (model, target, event) => {
             console.log(`3) Tag sample1`, model, target, event);
         });
 
-        this.onTagClick('button1', (model, target, event) => {
+        this.onTagClick("button1", (model, target, event) => {
             console.log(`Tag button1 click`, model, target, event);
             alert(`Tag button1 click with data: ${model.data}`);
         });
-        this.onTagClick('button2', (model, target, event) => {
+        this.onTagClick("button2", (model, target, event) => {
             console.log(`Tag button2 click`, model, target, event);
             alert(`Tag button2 click with data: ${model.data}`);
         });
-        this.onTagClick('button3', (model, target, event) => {
+        this.onTagClick("button3", (model, target, event) => {
             console.log(`Tag button3 click`, model, target, event);
             alert(`Tag button3 click with data: ${model.data}`);
         });
 
         setTimeout(() => {
-            this.offTagClick('sample1', sample1TagSecondListener);
+            this.offTagClick("sample1", sample1TagSecondListener);
         }, 2000);
 
-        this.onTagClick('redirect', () => {
-            this.navigateToTag('contact');
-        })
+        this.onTagClick("redirect", () => {
+            this.navigateToTag("contact");
+        });
     }
 }
 
