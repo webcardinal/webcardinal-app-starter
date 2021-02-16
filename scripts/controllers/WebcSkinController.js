@@ -1,6 +1,6 @@
-const { WccController } = WebCardinal.controllers;
+const { WebcController } = WebCardinal.controllers;
 
-class WebcSkinController extends WccController {
+class WebcSkinController extends WebcController {
     constructor(element, history) {
         super(element, history);
 

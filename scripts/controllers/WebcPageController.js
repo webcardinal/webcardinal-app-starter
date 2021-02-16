@@ -1,6 +1,6 @@
-const { WccController } = WebCardinal.controllers;
+const { WebcController } = WebCardinal.controllers;
 
-class WebcPageController extends WccController {
+class WebcPageController extends WebcController {
     getModel = (_) => ({
         button1: {
             text: this.t("button1"),
@@ -55,4 +55,4 @@ class WebcPageController extends WccController {
     }
 }
 
-export default WebcPageController; // used by <wcc-controller>, <wcc-bindable> and other components
+export default WebcPageController; // used by <webc-controller>, <webc-page> and other components

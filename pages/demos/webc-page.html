@@ -4,7 +4,7 @@
     <button data-model="@button3"></button>
     <input type="button" value="$button4" />
 
-    <wcc-if condition="@conditionResult">
+    <webc-if condition="@conditionResult">
         <div slot="true" class="alert alert-danger">
             <p>TRUE</p>
             <input type="button" value="$button5" />
@@ -14,9 +14,9 @@
             <p>FALSE</p>
             <input type="button" value="$button6" />
         </div>
-    </wcc-if>
+    </webc-if>
 
-    <wcc-for data-model="@itemsOne" auto-bind>
+    <webc-for data-model="@itemsOne" auto-bind>
         <button></button>
-    </wcc-for>
+    </webc-for>
 </webc-page>

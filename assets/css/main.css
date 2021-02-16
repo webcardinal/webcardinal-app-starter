@@ -1,5 +1,5 @@
 :root {
-    /* Override defaults (css variables of wcc-<component>) */
+    /* Override defaults (css variables of webc-<component>) */
 
-    --wcc-app-menu-mode: horizontal;
+    --webc-app-menu-mode: horizontal;
 }

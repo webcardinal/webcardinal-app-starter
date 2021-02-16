@@ -1,6 +1,6 @@
-const { WccController } = WebCardinal.controllers;
+const { WebcController } = WebCardinal.controllers;
 
-class AboutController extends WccController {
+class AboutController extends WebcController {
     getModel = (_) => ({
         input: {
             label: "Seconds",
@@ -211,4 +211,4 @@ class AboutController extends WccController {
     }
 }
 
-export default AboutController; // used by <wcc-controller>, <wcc-bindable> and other components
+export default AboutController; // used by <webc-controller>, <webc-page> and other components
