@@ -174,7 +174,7 @@ class AboutController extends WccController {
             console.log(`2) Tag sample1`, model, target, event);
         };
 
-        this.onTag('sample1', 'click', (model, target, event) => {
+        this.onTagEvent('sample1', 'click', (model, target, event) => {
             console.log(`1) Tag sample1`, model, target, event);
         });
         this.onTagClick('sample1', sample1TagSecondListener);
