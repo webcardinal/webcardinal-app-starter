@@ -1,4 +1,4 @@
-<webc-page controller="WebcPageController" enable-translations="true">
+<webc-page controller="WebcPageController" enable-translations>
     <button data-model="@button1" data-tag="button1"></button>
     <button data-model="@button2"></button>
     <button data-model="@button3"></button>
@@ -19,4 +19,15 @@
     <webc-for data-model="@itemsOne" auto-bind>
         <button></button>
     </webc-for>
+
+    <br />
+    <br />
+    <h2>Template without binding</h2>
+    <webc-template template-name="demo-template"></webc-template>
+
+    <h2>Template with simple binding</h2>
+    <webc-template template-name="demo-template" data-model="@"></webc-template>
+
+    <h2>Template with complex binding</h2>
+    <webc-template template-name="demo-template" data-model="@templateInnerInput"></webc-template>
 </webc-page>

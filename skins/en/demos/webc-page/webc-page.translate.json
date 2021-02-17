@@ -3,5 +3,6 @@
     "button2": "About",
     "button4": "HTML template",
     "button5": "Button if true",
-    "button6": "Button if false"
+    "button6": "Button if false",
+    "templateLabel": "Template label"
 }
