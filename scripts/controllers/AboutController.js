@@ -206,7 +206,7 @@ class AboutController extends WebcController {
         }, 2000);
 
         this.onTagClick("redirect", () => {
-            this.navigateToTag("contact");
+            this.navigateToPageTag("contact");
         });
     }
 }
