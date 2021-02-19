@@ -3,3 +3,8 @@
 
     --webc-app-menu-mode: horizontal;
 }
+
+webc-page {
+    display: block;
+    padding: 1rem;
+}

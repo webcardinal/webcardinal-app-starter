@@ -1,15 +1,25 @@
-<webc-page controller="WebcSkinController">
-    <webc-skin>
-        <header>
-            <h1 data-model="@header.title"></h1>
-        </header>
+<link rel="stylesheet" href="/assets/css/demos/webc-skin.css">
 
-        <main>
-            <psk-accordion multiple>
-                <webc-for data-model="@main.items">
-                    <psk-accordion-item data-model="@"></psk-accordion-item>
-                </webc-for>
-            </psk-accordion>
-        </main>
+<webc-page controller="demos/WebcSkinController">
+    <webc-skin href="/assets/css/demos/webc-skin.shadow.css">
+        <div class="test-container">
+            <header>
+                <h1 data-model="@header.title"></h1>
+                <psk-card data-model="@header.card"></psk-card>
+            </header>
+
+            <main>
+                <textarea data-model="@main.textarea"></textarea>
+
+                <button data-model="@main.save"></button>
+                <button data-model="@main.reset"></button>
+
+                <psk-accordion multiple>
+                    <webc-for data-model="@main.items">
+                        <psk-accordion-item data-model="@"></psk-accordion-item>
+                    </webc-for>
+                </psk-accordion>
+            </main>
+        </div>
     </webc-skin>
 </webc-page>

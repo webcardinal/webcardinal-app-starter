@@ -3,16 +3,13 @@ const { WebcController } = WebCardinal.controllers;
 class WebcPageController extends WebcController {
     getModel = (_) => ({
         button1: {
-            text: this.t("button1"),
-            _saveElement: true,
+            text: this.t("button1")
         },
         button2: {
-            text: this.t("button2"),
-            _saveElement: true,
+            text: this.t("button2")
         },
         button3: {
-            text: this.t("button3"),
-            _saveElement: true,
+            text: this.t("button3")
         },
         conditionResult: true,
         itemsOne: [
