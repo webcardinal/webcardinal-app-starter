@@ -1,0 +1,37 @@
+<webc-page controller="demos/WebcForController" enable-translations>
+    <div>
+        <p>{{ $changeLanguage }}</p>
+        <button data-tag="set-language" data-model="@enButton">en</button>
+        <button data-tag="set-language" data-model="@roButton">ro</button>
+    </div>
+
+    <h1>webc-for simple</h1>
+    <webc-for data-model="@itemsOne">
+        <article class="article">
+            <h4 data-model="@title" class="article"></h4>
+            <p data-model="@content"></p>
+        </article>
+    </webc-for>
+
+    <h1>webc-for with auto-bind</h1>
+    <webc-for data-model="@itemsTwo" auto-bind>
+        <article></article>
+        <span></span>
+        <button data-tag="sample1"></button>
+    </webc-for>
+
+    <h1>webc-for with auto-bind and translation</h1>
+    <webc-for data-model="@itemsTwoTranslations" auto-bind>
+        <article></article>
+        <span></span>
+        <button data-tag="sample1"></button>
+    </webc-for>
+
+    <h1>webc-for with inner webc-for</h1>
+    <webc-for data-model="@itemsThree">
+        <div data-model="@div" class="div"></div>
+        <webc-for data-model="@array" auto-bind>
+            <span style="margin: 0 10px;"></span>
+        </webc-for>
+    </webc-for>
+</webc-page>

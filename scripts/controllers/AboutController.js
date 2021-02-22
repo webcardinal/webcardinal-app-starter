@@ -114,7 +114,7 @@ class AboutController extends WebcController {
     }
 
     async onReady() {
-        setInterval((_) => {
+        this.interval = setInterval((_) => {
             this.model.input.value++;
             this.model.conditionResult = !this.model.conditionResult;
             // console.warn("test", "test2");
@@ -123,20 +123,20 @@ class AboutController extends WebcController {
 
         // testing various conditions update
         const updateSubmittedInfo = () => {
-            setTimeout(() => {
+            this.timeout1 = setTimeout(() => {
                 this.model.wasSubmitted = true;
 
-                setTimeout(() => {
+                this.timeout2 = setTimeout(() => {
                     this.model.hasErrors = true;
 
-                    setTimeout(() => {
+                    this.timeout3 = setTimeout(() => {
                         this.model.wasSubmitted = false;
                         this.model.hasErrors = false;
 
                         updateSubmittedInfo();
-                    }, 1000);
-                }, 1000);
-            }, 1000);
+                    }, 2000);
+                }, 2000);
+            }, 2000);
         };
         updateSubmittedInfo();
 
@@ -201,13 +201,21 @@ class AboutController extends WebcController {
             alert(`Tag button3 click with data: ${model.data}`);
         });
 
-        setTimeout(() => {
+        this.timeout4 = setTimeout(() => {
             this.offTagClick("sample1", sample1TagSecondListener);
         }, 2000);
 
         this.onTagClick("redirect", () => {
             this.navigateToPageTag("contact");
         });
+    }
+
+    onDisconnectedCallback() {
+        clearInterval(this.interval);
+        clearTimeout(this.timeout1);
+        clearTimeout(this.timeout2);
+        clearTimeout(this.timeout3);
+        clearTimeout(this.timeout4);
     }
 }
 
