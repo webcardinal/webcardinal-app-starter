@@ -1,4 +1,16 @@
 <webc-page controller="demos/WebcPageController" enable-translations>
+    dummy
+    <button data-model="@button1" data-tag="button1">{{ @button1.text }}</button>
+    <p>
+        <span>{{ $button1 }}</span>
+    </p>
+    <p>
+        <span><span>{{$button2}}</span></span>
+    </p>
+    <p>dummy</p>
+    <p>{{ @button1.text }}</p>
+    dummy
+
     <button data-model="@button1" data-tag="button1"></button>
     <button data-model="@button2"></button>
     <button data-model="@button3"></button>

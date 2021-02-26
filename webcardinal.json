@@ -16,10 +16,16 @@
       "name": "Demos",
       "children": [
         {
-          "name": "webc-skin"
+          "name": "webc-if"
+        },
+        {
+          "name": "webc-for"
         },
         {
           "name": "webc-page"
+        },
+        {
+          "name": "webc-skin"
         }
       ]
     },
