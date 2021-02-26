@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "description": "Application template that combines multiple components of WebCardinal.",
   "scripts": {
-    "postinstall": "node ./node_modules/octopus/scripts/run && npm run clone-webcardinal-components && npm run build",
-    "clone-webcardinal-components": "node ./node_modules/octopus/scripts/run clone-webcardinal-components",
-    "build-webcardinal-components": "node ./node_modules/octopus/scripts/run build-webcardinal-components",
-    "build-webcardinal-themes": "node ./node_modules/octopus/scripts/run build-webcardinal-themes",
-    "build": "npm run build-webcardinal-components && npm run build-webcardinal-themes",
+    "postinstall": "npm run bundle-webcardinal",
+    "bundle-webcardinal": "node node_modules/octopus/scripts/run bundle-webcardinal devmode",
+    "dev": "node node_modules/octopus/scripts/run build-webcardinal.dev devmode",
     "start": "ws --spa ./index.html"
   },
   "dependencies": {},
