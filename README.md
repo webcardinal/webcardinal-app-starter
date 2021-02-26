@@ -17,7 +17,7 @@ cd my-application
 npm install
 ```
 
-Now you should see two folders: __`webcardinal`__ and __`.dev`__.
+Now you should see two folders: __`webcardinal`__ and __`.webcardinal`__.
 
 First one is your distribution of WebCardinal.
 
@@ -33,16 +33,18 @@ npm start
 
 Just open [http://127.0.0.1:8000](http://127.0.0.1:8000) with you favorite browser.
 
-### How to build
+### How to update your distribution
 
 ```
-npm run build
+npm run bundle-webcardinal
 ```
+
+### How to build
 
 For development, you must know some commands from [octopus](https://github.com/PrivateSky/octopus) (our custom task runner).
 
-The following commands are used:
+The following actions are used:
 
-- `cloneWebCardinalComponents` - deals with downloading web components and installing dependencies;
+- <del>`cloneWebCardinalComponents` - deals with downloading web components and installing dependencies</del>;
 - `buildWebCardinalComponents` - it generates the distribution used in the application;
-- `buildWebCardinalThemes` - for `@cardinal/<module>` which are using PrivateSky [themes](https://github.com/PrivateSky/?q=theme).
+- <del>`buildWebCardinalThemes` - for `@cardinal/<module>` which are using PrivateSky [themes](https://github.com/PrivateSky/?q=theme)</del>.
