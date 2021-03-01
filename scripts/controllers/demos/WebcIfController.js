@@ -24,6 +24,22 @@ class WebcIfController extends WebcController {
         super(element, history);
 
         this.setModel(this.getModel());
+
+        this.model.addExpression(
+            "isEvenInputValue",
+            () => {
+                return this.model.input.value % 2 === 0;
+            },
+            "input.value"
+        );
+
+        this.model.addExpression(
+            "formattedInputValue",
+            () => {
+                return `Current value is: ${this.model.input.value}`;
+            },
+            "input.value"
+        );
     }
 
     async onReady() {

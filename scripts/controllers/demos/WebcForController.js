@@ -2,6 +2,13 @@ const { WebcController } = WebCardinal.controllers;
 
 class WebcForController extends WebcController {
     getModel = (_) => ({
+        input: {
+            type: "text",
+            value: "0",
+            style: "border: 1px solid #333",
+        },
+        buttonText: "root buttonText",
+        spanText: "root spanText",
         itemsOne: [
             {
                 title: {
@@ -12,6 +19,8 @@ class WebcForController extends WebcController {
                 content: {
                     text: "Description 1",
                 },
+                buttonText: "itemsOne buttonText 1",
+                spanText: "itemsOne spanText 1",
             },
             {
                 title: {
@@ -20,6 +29,8 @@ class WebcForController extends WebcController {
                 content: {
                     text: "Description 2",
                 },
+                buttonText: "itemsOne buttonText 2",
+                spanText: "itemsOne spanText 2",
             },
             {
                 title: {
@@ -28,6 +39,8 @@ class WebcForController extends WebcController {
                 content: {
                     text: "Description 3",
                 },
+                buttonText: "itemsOne buttonText 3",
+                spanText: "itemsOne spanText 3",
             },
         ],
         itemsTwo: [
@@ -81,12 +94,37 @@ class WebcForController extends WebcController {
         super(element, history);
 
         this.setModel(this.getModel());
+
+        Array.from(Array(this.model.itemsOne.length)).forEach((_, idx) => {
+            this.model.addExpression(
+                `itemsOne.${idx}.formattedInputValue`,
+                () => {
+                    return `Current value is: ${this.model.input.value * idx + 1}`;
+                },
+                "input.value"
+            );
+            this.model.addExpression(
+                `itemsOne.${idx}.formattedClass`,
+                () => {
+                    return `class-${this.model.input.value * idx + 1}`;
+                },
+                "input.value"
+            );
+        });
     }
 
     async onReady() {
+        this.interval = setInterval((_) => {
+            this.model.input.value++;
+        }, 2000);
+
         this.onTagClick("set-language", (model, event) => {
             this.setLanguage(model.language);
         });
+    }
+
+    onDisconnectedCallback() {
+        clearInterval(this.interval);
     }
 }
 

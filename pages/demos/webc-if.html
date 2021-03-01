@@ -13,6 +13,16 @@
         </div>
     </webc-if>
 
+    <h1>webc-if without slots and expression for condition</h1>
+    <webc-if condition="@isEvenInputValue">
+        <div class="alert alert-danger">
+            <p>IS EVEN</p>
+            <input data-model="@input" />
+            <input type="button" value="@formattedInputValue" />
+            <span>{{ @formattedInputValue }}</span>
+        </div>
+    </webc-if>
+
     <h1>webc-if with both true and false slots and translations</h1>
     <webc-if condition="@conditionResult">
         <div slot="true" class="alert alert-danger">

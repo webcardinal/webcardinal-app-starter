@@ -10,6 +10,18 @@
         <article class="article">
             <h4 data-model="@title" class="article"></h4>
             <p data-model="@content"></p>
+            <input type="button" value="@buttonText" />
+            <span>{{ @spanText }}</span>
+        </article>
+    </webc-for>
+
+    <h1>webc-for simple with expressions</h1>
+    <webc-for data-model="@itemsOne">
+        <article class="article">
+            <h4 data-model="@title" class="article"></h4>
+            <p data-model="@content"></p>
+            <input type="button" value="@formattedInputValue" />
+            <span data-class="@formattedClass">{{ @formattedInputValue }}</span>
         </article>
     </webc-for>
 
@@ -31,7 +43,7 @@
     <webc-for data-model="@itemsThree">
         <div data-model="@div" class="div"></div>
         <webc-for data-model="@array" auto-bind>
-            <span style="margin: 0 10px;"></span>
+            <span style="margin: 0 10px"></span>
         </webc-for>
     </webc-for>
 </webc-page>
