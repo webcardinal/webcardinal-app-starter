@@ -18,6 +18,7 @@ class WebcIfController extends WebcController {
         roButton: {
             language: "ro",
         },
+        conditionPromise: new Promise(() => {}),
     });
 
     constructor(element, history) {
@@ -67,6 +68,16 @@ class WebcIfController extends WebcController {
         };
         updateSubmittedInfo();
 
+        let conditionPromiseResult = false;
+        this.interval2 = setInterval((_) => {
+            this.model.conditionPromise = new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(conditionPromiseResult);
+                    conditionPromiseResult = !conditionPromiseResult;
+                }, 1000);
+            });
+        }, 2000);
+
         this.onTagClick("set-language", (model, event) => {
             this.setLanguage(model.language);
         });
@@ -74,6 +85,7 @@ class WebcIfController extends WebcController {
 
     onDisconnectedCallback() {
         clearInterval(this.interval);
+        clearInterval(this.interval2);
         clearTimeout(this.timeout1);
         clearTimeout(this.timeout2);
         clearTimeout(this.timeout3);

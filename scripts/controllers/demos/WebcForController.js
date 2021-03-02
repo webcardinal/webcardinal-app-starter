@@ -43,6 +43,7 @@ class WebcForController extends WebcController {
                 spanText: "itemsOne spanText 3",
             },
         ],
+        itemsEmpty: [],
         itemsTwo: [
             {
                 html: "Item 0",

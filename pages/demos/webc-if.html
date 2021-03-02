@@ -75,4 +75,15 @@
             <p>Submitting...</p>
         </div>
     </webc-if>
+
+    <h1>webc-if with both true and false slots and promise for condition</h1>
+    <webc-if condition="@conditionPromise">
+        <div slot="true" class="alert alert-danger">
+            <p>TRUE</p>
+        </div>
+
+        <div slot="false" class="alert alert-success">
+            <p>FALSE</p>
+        </div>
+    </webc-if>
 </webc-page>
