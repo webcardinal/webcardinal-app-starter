@@ -219,4 +219,4 @@ class AboutController extends WebcController {
     }
 }
 
-export default AboutController; // used by <webc-controller>, <webc-page> and other components
+export default AboutController; // used by <webc-container> and other components

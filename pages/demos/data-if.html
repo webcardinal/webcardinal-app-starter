@@ -1,30 +1,30 @@
-<webc-page controller="demos/WebcIfController" enable-translations>
+<webc-container controller="demos/DataIfController" enable-translations>
     <div>
         <p>{{ $changeLanguage }}</p>
         <button data-tag="set-language" data-model="@enButton">en</button>
         <button data-tag="set-language" data-model="@roButton">ro</button>
     </div>
 
-    <h1>webc-if without slots</h1>
-    <webc-if condition="@conditionResult">
+    <h1>data-if without slots</h1>
+    <div data-if="@conditionResult">
         <div class="alert alert-danger">
             <p>TRUE</p>
             <input data-model="@input" />
         </div>
-    </webc-if>
+    </div>
 
-    <h1>webc-if without slots and expression for condition</h1>
-    <webc-if condition="@isEvenInputValue">
+    <h1>data-if without slots and expression for condition</h1>
+    <div data-if="@isEvenInputValue">
         <div class="alert alert-danger">
             <p>IS EVEN</p>
             <input data-model="@input" />
             <input type="button" value="@formattedInputValue" />
             <span>{{ @formattedInputValue }}</span>
         </div>
-    </webc-if>
+    </div>
 
-    <h1>webc-if with both true and false slots and translations</h1>
-    <webc-if condition="@conditionResult">
+    <h1>data-if with both true and false slots and translations</h1>
+    <div data-if="@conditionResult">
         <div slot="true" class="alert alert-danger">
             <p>{{ $true }}</p>
             <p>{{ @trueText }}</p>
@@ -42,10 +42,10 @@
             </p>
             <input value="@input.value" type="@input.type" />
         </div>
-    </webc-if>
+    </div>
 
-    <h1>webc-if with both true and false slots</h1>
-    <webc-if condition="@conditionResult">
+    <h1>data-if with both true and false slots</h1>
+    <div data-if="@conditionResult">
         <div slot="true" class="alert alert-danger">
             <p>TRUE</p>
             <input data-model="@input" />
@@ -55,13 +55,13 @@
             <p>FALSE</p>
             <input value="@input.value" type="@input.type" />
         </div>
-    </webc-if>
+    </div>
 
-    <h1>webc-if with webc-if inside</h1>
-    <webc-if condition="@wasSubmitted">
+    <h1>data-if with data-if inside</h1>
+    <div data-if="@wasSubmitted">
         <div slot="true" class="alert alert-danger">
             <p>Was submitted:</p>
-            <webc-if condition="@hasErrors">
+            <div data-if="@hasErrors">
                 <div slot="true" class="alert alert-danger">
                     <p>The email address is invalid</p>
                 </div>
@@ -69,15 +69,15 @@
                 <div slot="false" class="alert alert-success">
                     <p>The email address is valid</p>
                 </div>
-            </webc-if>
+            </div>
         </div>
         <div slot="false" class="alert alert-success">
             <p>Submitting...</p>
         </div>
-    </webc-if>
+    </div>
 
-    <h1>webc-if with both true and false slots and promise for condition</h1>
-    <webc-if condition="@conditionPromise">
+    <h1>data-if with both true and false slots and promise for condition</h1>
+    <div data-if="@conditionPromise">
         <div slot="true" class="alert alert-danger">
             <p>TRUE</p>
         </div>
@@ -85,5 +85,5 @@
         <div slot="false" class="alert alert-success">
             <p>FALSE</p>
         </div>
-    </webc-if>
-</webc-page>
+    </div>
+</webc-container>

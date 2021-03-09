@@ -76,4 +76,4 @@ class WebcPageController extends WebcController {
     }
 }
 
-export default WebcPageController; // used by <webc-controller>, <webc-page> and other components
+export default WebcPageController; // used by <webc-container> and other components

@@ -1,4 +1,4 @@
-<webc-page controller="demos/WebcPageController" enable-translations>
+<webc-container controller="demos/WebcPageController" enable-translations>
     dummy
     <button data-model="@button1" data-tag="button1">{{ @button1.text }}</button>
     <p>
@@ -35,11 +35,11 @@
     <br />
     <br />
     <h2>Template without binding</h2>
-    <webc-template template-name="demo-template"></webc-template>
+    <webc-template template="demo-template"></webc-template>
 
     <h2>Template with simple binding</h2>
-    <webc-template template-name="demo-template" data-model="@"></webc-template>
+    <webc-template template="demo-template" data-model="@"></webc-template>
 
     <h2>Template with complex binding</h2>
-    <webc-template template-name="demo-template" data-model="@templateInnerInput"></webc-template>
-</webc-page>
+    <webc-template template="demo-template" data-model="@templateInnerInput"></webc-template>
+</webc-container>

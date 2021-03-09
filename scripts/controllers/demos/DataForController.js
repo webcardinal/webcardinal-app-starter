@@ -1,6 +1,6 @@
 const { WebcController } = WebCardinal.controllers;
 
-class WebcForController extends WebcController {
+class DataForController extends WebcController {
     getModel = (_) => ({
         input: {
             type: "text",
@@ -129,4 +129,4 @@ class WebcForController extends WebcController {
     }
 }
 
-export default WebcForController; // used by <webc-controller>, <webc-page> and other components
+export default DataForController; // used by <webc-container> and other components
