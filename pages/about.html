@@ -14,14 +14,14 @@
     <button name="modal-redirect" data-tag="showModalRedirect">Show error modal and redirect</button>
 
     <h1>webc-for example 1</h1>
-    <webc-for data-model="@itemsOne" auto-bind>
-        <article></article>
-        <span></span>
-        <button data-tag="sample1"></button>
+    <div data-for="@itemsOne" auto-bind>
+        <article data-model="@"></article>
+        <span data-model="@"></span>
+        <button data-model="@" data-tag="sample1"></button>
     </webc-for>
 
     <h1>webc-for example 2</h1>
-    <webc-for data-model="@itemsTwo">
+    <div data-model="@itemsTwo">
         <article class="article">
             <h4 data-model="@title" class="article"></h4>
             <p data-model="@content"></p>
@@ -46,15 +46,15 @@
     <webc-link href="https://stackoverflow.com">StackOverflow</webc-link>
 
     <h1>webc-for example 3</h1>
-    <webc-for data-model="@itemsThree">
+    <div data-for="@itemsThree">
         <div data-model="@div" class="div"></div>
-        <webc-for data-model="@array" auto-bind>
-            <span></span>
+        <div data-for="@array" >
+            <span data-model="@"></span>
         </webc-for>
     </webc-for>
 
     <h1>webc-if example 1</h1>
-    <webc-if condition="@conditionResult">
+    <div data-if="@conditionResult">
         <div slot="true" class="alert alert-danger">
             <p>TRUE</p>
             <input data-model="@input" />
@@ -64,13 +64,13 @@
             <p>FALSE</p>
             <input value="@input.value" type="@input.type" />
         </div>
-    </webc-if>
+    </div>
 
     <h1>webc-if example 2</h1>
-    <webc-if condition="@wasSubmitted">
+    <div data-if="@wasSubmitted">
         <div slot="true" class="alert alert-danger">
             <p>Was submitted:</p>
-            <webc-if condition="@hasErrors">
+            <div data-if="@hasErrors">
                 <div slot="true" class="alert alert-danger">
                     <p>The email address is invalid</p>
                 </div>
@@ -78,11 +78,11 @@
                 <div slot="false" class="alert alert-success">
                     <p>The email address is valid</p>
                 </div>
-            </webc-if>
+            </div>
         </div>
         <div slot="false" class="alert alert-success">
             <p>Submitting...</p>
         </div>
-    </webc-if>
+    </div>
 
 </webc-container>

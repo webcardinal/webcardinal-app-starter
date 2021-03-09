@@ -18,6 +18,6 @@ main psk-accordion psk-accordion-item[data-shadow] .content {
  * An invalid example, a warning is thrown
  * use <link rel="stylesheet" href="/path"> or <style>...</style>
  */
-webc-page header {
+webc-container header {
     border: 2px dashed #FF000050;
 }

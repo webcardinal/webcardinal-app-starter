@@ -1,6 +1,6 @@
 const { WebcController } = WebCardinal.controllers;
 
-class WebcPageController extends WebcController {
+class WebcContainerController extends WebcController {
     getModel = (_) => ({
         button1: {
             text: this.translate("button1"),
@@ -76,4 +76,4 @@ class WebcPageController extends WebcController {
     }
 }
 
-export default WebcPageController; // used by <webc-container> and other components
+export default WebcContainerController; // used by <webc-container> and other components

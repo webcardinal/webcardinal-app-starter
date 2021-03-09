@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/assets/css/demos/webc-skin.css">
+<link rel="stylesheet" href="/assets/css/demos/webc-skin.css" />
 
 <webc-container controller="demos/WebcSkinController">
     <webc-skin href="/assets/css/demos/webc-skin.shadow.css">
@@ -15,9 +15,9 @@
                 <button data-model="@main.reset"></button>
 
                 <psk-accordion multiple>
-                    <webc-for data-model="@main.items">
+                    <div data-for="@main.items">
                         <psk-accordion-item data-model="@"></psk-accordion-item>
-                    </webc-for>
+                    </div>
                 </psk-accordion>
             </main>
         </div>

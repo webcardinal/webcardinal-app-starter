@@ -1,4 +1,4 @@
-<webc-container controller="demos/WebcPageController" enable-translations>
+<webc-container controller="demos/WebcContainerController" enable-translations>
     dummy
     <button data-model="@button1" data-tag="button1">{{ @button1.text }}</button>
     <p>
@@ -16,7 +16,7 @@
     <button data-model="@button3"></button>
     <input type="button" value="$button4" />
 
-    <webc-if condition="@conditionResult">
+    <div data-if="@conditionResult">
         <div slot="true" class="alert alert-danger">
             <p>TRUE</p>
             <input type="button" value="$button5" />
@@ -26,11 +26,11 @@
             <p>FALSE</p>
             <input type="button" value="$button6" />
         </div>
-    </webc-if>
+    </div>
 
-    <webc-for data-model="@itemsOne" auto-bind>
-        <button></button>
-    </webc-for>
+    <div data-for="@itemsOne">
+        <button data-model="@"></button>
+    </div>
 
     <br />
     <br />
