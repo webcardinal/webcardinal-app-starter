@@ -1,6 +1,6 @@
 ## Description
 
-Application template that combines multiple components of WebCardinal.
+Application template that uses WebCardinal.
 
 ## How to make it run on your side
 
@@ -10,41 +10,35 @@ Application template that combines multiple components of WebCardinal.
 git clone https://github.com/webcardinal/webcardinal-app-starter my-application
 ```
 
-### Install dependencies
+### Install components of your Application
 
 ```
 cd my-application
 npm install
 ```
 
-Now you should see two folders: __`webcardinal`__ and __`.webcardinal`__.
+Now you should see a folder: __`.dev`__.
 
-First one is your distribution of WebCardinal.
+In this folder you have the WebCardinal bundle and other dependecies.
 
-Second one is where your development workflow will take place. All components, themes and other local dependencies are placed there.
+### Generate the distribution
+
+```bash
+# production ready distribution
+npm run build
+
+# development usage
+# npm run dev 
+```
+
+The default output target is __`webcardinal`__ directory.
 
 ### Run local server
 
 ```
-npm start
+npm run server
 ```
 
 ### See it in your browser
 
 Just open [http://127.0.0.1:8000](http://127.0.0.1:8000) with you favorite browser.
-
-### How to update your distribution
-
-```
-npm run bundle-webcardinal
-```
-
-### How to build
-
-For development, you must know some commands from [octopus](https://github.com/PrivateSky/octopus) (our custom task runner).
-
-The following actions are used:
-
-- <del>`cloneWebCardinalComponents` - deals with downloading web components and installing dependencies</del>;
-- `buildWebCardinalComponents` - it generates the distribution used in the application;
-- <del>`buildWebCardinalThemes` - for `@cardinal/<module>` which are using PrivateSky [themes](https://github.com/PrivateSky/?q=theme)</del>.

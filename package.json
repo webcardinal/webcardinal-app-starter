@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Application template that combines multiple components of WebCardinal.",
   "scripts": {
-    "postinstall": "npm run bundle-webcardinal",
-    "bundle-webcardinal": "node node_modules/octopus/scripts/run bundle-webcardinal devmode",
-    "dev": "node node_modules/octopus/scripts/run build-webcardinal.dev devmode",
-    "start": "ws --spa ./index.html"
+    "postinstall": "node node_modules/octopus/scripts/run dependencies devmode && npm run build",
+    "build": "node node_modules/octopus/scripts/run build devmode",
+    "dev": "node node_modules/octopus/scripts/run dev devmode",
+    "server": "ws --spa ./index.html"
   },
   "dependencies": {},
   "devDependencies": {
