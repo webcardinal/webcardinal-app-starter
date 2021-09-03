@@ -94,7 +94,7 @@ class DataForController extends WebcController {
     constructor(element, history) {
         super(element, history);
 
-        this.setModel(this.getModel());
+        this.model = this.getModel();
 
         Array.from(Array(this.model.itemsOne.length)).forEach((_, idx) => {
             this.model.addExpression(

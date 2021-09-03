@@ -105,7 +105,7 @@ class AboutController extends WebcController {
 
         console.log("Hello World!");
 
-        this.setModel(this.getModel());
+        this.model = this.getModel();
 
         console.log({
             proxy: this.model,

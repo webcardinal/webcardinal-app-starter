@@ -49,7 +49,7 @@ class WebcContainerController extends WebcController {
     constructor(element, history) {
         super(element, history);
 
-        this.setModel(this.getModel());
+        this.model = this.getModel();
     }
 
     async onReady() {

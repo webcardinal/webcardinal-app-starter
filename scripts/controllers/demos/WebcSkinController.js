@@ -45,7 +45,7 @@ class WebcSkinController extends WebcController {
     constructor(element, history) {
         super(element, history);
 
-        this.setModel(this.initializeModel());
+        this.model = this.initializeModel();
     }
 }
 

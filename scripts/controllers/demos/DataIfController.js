@@ -24,7 +24,7 @@ class DataIfController extends WebcController {
     constructor(element, history) {
         super(element, history);
 
-        this.setModel(this.getModel());
+        this.model = this.getModel();
 
         this.model.addExpression(
             "isEvenInputValue",

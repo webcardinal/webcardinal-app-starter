@@ -59,10 +59,13 @@
       "actions": [
         {
           "type": "buildWebCardinalComponents",
-          "src": "./.webcardinal",
+          "src": "./.dev/webcardinal/.webcardinal",
           "target": "./webcardinal",
           "options": {
-            "DEV": true
+            "DEV": true,
+            "devComponents": [
+              "webcardinal-core"
+            ]
           }
         }
       ]
